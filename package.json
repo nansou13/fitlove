@@ -1,6 +1,6 @@
 {
-  "name": "mytraining",
-  "version": "0.1.0",
+  "name": "fitlove",
+  "version": "0.0.1",
   "private": true,
   "devDependencies": {
     "babel": "^6.23.0",
