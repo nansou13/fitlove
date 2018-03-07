@@ -1,3 +1,89 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent; }
+
+@-ms-viewport {
+  width: device-width; }
+
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block; }
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #FFF; }
+
+[tabindex="-1"]:focus {
+  outline: 0 !important; }
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects; }
+  a:hover {
+    text-decoration: underline; }
+
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none; }
+  a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
+    color: inherit;
+    text-decoration: none; }
+  a:not([href]):not([tabindex]):focus {
+    outline: 0; }
+
+img {
+  vertical-align: middle;
+  border-style: none; }
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem; }
+
+button {
+  border-radius: 0; }
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color; }
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; }
+
+button,
+input {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+[hidden] {
+  display: none !important; }
+
 .circle {
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -78,71 +164,6 @@ a, a:visited, a:hover, a:focus, a:active {
   text-overflow: ellipsis;
   font-size: 13px; }
 
-.navbar {
-  margin-bottom: 0px; }
-  .navbar.navbar-default {
-    background-color: #231F20;
-    border-color: inherit; }
-    .navbar.navbar-default .navbar-header {
-      text-align: center; }
-      .navbar.navbar-default .navbar-header .navbar-brand {
-        color: #27aae1; }
-    .navbar.navbar-default .miniMenu {
-      text-align: center; }
-      .navbar.navbar-default .miniMenu .navbar-nav {
-        margin: auto;
-        display: inline-block; }
-        .navbar.navbar-default .miniMenu .navbar-nav .dropdown {
-          float: left !important; }
-          .navbar.navbar-default .miniMenu .navbar-nav .dropdown #miniMenu_Profil_picture_main {
-            width: 45px;
-            margin-top: 5px;
-            height: 45px; }
-            .navbar.navbar-default .miniMenu .navbar-nav .dropdown #miniMenu_Profil_picture_main .profil_picture_img {
-              border: 3px solid #FFF; }
-          .navbar.navbar-default .miniMenu .navbar-nav .dropdown a {
-            color: #fff;
-            font-size: 13px;
-            font-weight: 600; }
-            .navbar.navbar-default .miniMenu .navbar-nav .dropdown a .icon {
-              font-size: 25px; }
-            .navbar.navbar-default .miniMenu .navbar-nav .dropdown a .badge {
-              position: absolute;
-              top: 8px;
-              right: 0px; }
-            .navbar.navbar-default .miniMenu .navbar-nav .dropdown a:hover, .navbar.navbar-default .miniMenu .navbar-nav .dropdown a:active, .navbar.navbar-default .miniMenu .navbar-nav .dropdown a:focus {
-              color: #27aae1;
-              background: none; }
-    .navbar.navbar-default form {
-      margin-top: 12px; }
-      .navbar.navbar-default form .form-group {
-        position: relative; }
-        .navbar.navbar-default form .form-group .glyphicon {
-          font-size: 17px;
-          margin-top: 4px;
-          position: absolute;
-          left: 13px;
-          top: 4px;
-          color: #fff;
-          font-size: 11px !important; }
-        .navbar.navbar-default form .form-group input.form-control {
-          background: rgba(255, 255, 255, 0.2);
-          border: 0;
-          box-shadow: none;
-          min-width: 205px;
-          color: #fff;
-          height: 26px;
-          border-radius: 13px;
-          font-size: 13px;
-          padding-left: 30px; }
-
-.profil_picture_img {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  border: 5px solid #FFF; }
-
 #footer {
   background: #fff;
   position: relative; }
@@ -154,42 +175,6 @@ a, a:visited, a:hover, a:focus, a:active {
     height: 5px;
     width: 100%;
     position: absolute; }
-  #footer .footer-wrapper {
-    padding: 50px 0;
-    float: left;
-    width: 100%; }
-    #footer .footer-wrapper ul {
-      padding-left: 15px; }
-      #footer .footer-wrapper ul.social-icons li {
-        background: transparent;
-        width: 30px;
-        height: 30px;
-        border: 1px solid #f1f2f2;
-        border-radius: 4px;
-        margin: 3px;
-        text-align: center; }
-        #footer .footer-wrapper ul.social-icons li a {
-          color: #6d6e71;
-          font-size: 15px;
-          line-height: 30px; }
-      #footer .footer-wrapper ul .list-inline > li {
-        display: inline-block;
-        padding-right: 5px;
-        padding-left: 5px; }
-    #footer .footer-wrapper ul.footer-links li {
-      line-height: 25px;
-      list-style: none; }
-    #footer .footer-wrapper ul.contact li {
-      list-style: none;
-      padding: 15px 0;
-      border-bottom: 1px solid #f1f2f2;
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 15px; }
-      #footer .footer-wrapper ul.contact li i {
-        font-size: 18px;
-        margin-right: 20px;
-        color: #27AAE1; }
   #footer .copyright {
     background: #231F20;
     text-align: center;
