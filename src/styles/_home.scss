@@ -1,0 +1,67 @@
+.left-content-site {
+    padding-top: 55px;
+}
+#profile-card{
+    background:linear-gradient(to bottom, rgba(39,170,225,.8), rgba(28,117,188,.8));
+    width: 100%;
+    min-height: 90px;
+    border-radius: 4px;
+    padding: 10px 20px;
+    color: #fff;
+    margin-bottom: 40px;
+    position: relative;
+
+    #profil_picture_main {
+        position: absolute;
+        bottom: -20px;
+        left: 10px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile_name {
+        margin-left: 80px;
+        line-height: 0px;
+        margin-top: 20px;
+    }
+}
+.myNav {
+    ul {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 0 0 40px 0;
+
+        li {
+            list-style: none;
+            display: block;
+            padding: 15px 0;
+
+            &.news {
+               font-weight: bold;
+            }
+
+            i {
+                font-size: 21px;
+                margin-right: 15px;
+                float: left;
+                line-height: 22px;
+            }
+            div {
+                position: relative;
+                margin-left: 30px;
+            }
+        }
+    }
+}
+.content-site {
+    padding: 55px 10px 0px 20px;
+
+    > .lineContents:first-child h4 {
+      margin-top: 0px;
+    }
+
+    .lineContents {
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,24 @@
+export const ASYNC_START = 'ASYNC_START'
+export const ASYNC_END = 'ASYNC_END'
+
+export const APP_LOAD = 'APP_LOAD'
+export const REDIRECT = 'REDIRECT'
+
+// Visitor
+export const UPDATE_FIELD_AUTH = 'UPDATE_FIELD_AUTH'
+export const LOGIN = 'LOGIN'
+export const LOGIN_PAGE_UNLOADED = 'LOGIN_PAGE_UNLOADED'
+
+export const REGISTER = 'REGISTER'
+
+export const LOGOUT = 'LOGOUT'
+
+export const ADD_TRAINING = '@@SELECTED_TRAINING_ADD_TRAINING'
+export const REMOVE_TRAINING = '@@SELECTED_TRAINING_REMOVE_TRAINING'
+
+export const START_TRAINING_SELECTED_LIST = '@@START_SELECTED_TRAINING_LIST'
+
+export const GET_USERS_LIST = 'GET_USERS_LIST'
+
+export const FORM_VALIDATE = 'FORM_VALIDATE'
+export const IMG_UPLOAD = 'IMG_UPLOAD'

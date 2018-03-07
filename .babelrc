@@ -1,0 +1,10 @@
+{
+  "presets": ["es2015", "stage-0", "react"],
+  "plugins": ["styled-jsx/babel", ["react-intl", { "messagesDir": "./build/messages/" }]],
+  "env": {
+    "test": {
+      "presets": ["es2015", "react", "stage-0"],
+      "plugins": [ "styled-jsx/babel" ]
+    }
+  }
+}

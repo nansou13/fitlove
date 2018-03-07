@@ -1,0 +1,16 @@
+@import "./styles/_utils.scss";
+@import "./styles/_header.scss";
+@import "./styles/_footer.scss";
+@import "./styles/_home.scss";
+
+@import "./styles/components/_gyms.scss";
+
+@import "./styles/_users.scss";
+
+body{
+  font-family: 'Lato', sans-serif;
+  color: #6d6e71;
+}
+a, a:visited, a:hover, a:focus, a:active{
+  color:#6d6e71;
+}
