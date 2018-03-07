@@ -10,7 +10,7 @@ import { STATIC_URL } from '../constants/globals'
 import { UserBadge } from '../components/userBadge'
 import { User } from '../components/userList'
 
-import { Col } from 'react-bs-grid'
+import { Col } from '@nans13/react-bs-grid'
 
 const mapStateToProps = ({
   common: { appLoaded, currentUser },
