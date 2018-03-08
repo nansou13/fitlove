@@ -10,6 +10,7 @@ import '../App.css'
 import Template from './templates'
 import CreateProgram from './CreateProgram'
 import Brouillon from './Brouillon'
+import Register from './Register'
 import Visitor from './Visitor'
 import Home from './Home'
 import UserProfil from './UserProfil'
@@ -74,6 +75,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={currentUser ? Home : Visitor} />
             <Route exact path="/login" component={Visitor} />
+            <Route exact path="/register" component={Register} />
             <Route exact path="/user/:id" component={UserProfil} />
             <Route exact path="/account" component={EditProfile} />
             <Route path="/training" component={CreateProgram} />

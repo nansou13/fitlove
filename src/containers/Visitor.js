@@ -39,8 +39,8 @@ class Visitor extends React.Component {
       <Container className="auth-page">
         <Row>
           <Col md={6} mdOffset={3} xs={12}>
-            <h1 className="text-xs-center">Sign In</h1>
-            <p className="text-xs-center">
+            <h1>Sign In</h1>
+            <p>
               <Link to="/register">Need an account?</Link>
             </p>
             {/* <ListErrors errors={this.props.errors} /> */}

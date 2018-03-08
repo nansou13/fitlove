@@ -10,7 +10,7 @@ import { STATIC_URL } from '../constants/globals'
 import { UserBadge } from '../components/userBadge'
 import { User } from '../components/userList'
 
-import { Col } from '@nans13/react-bs-grid'
+import { Col, Container, Row } from '@nans13/react-bs-grid'
 
 const mapStateToProps = ({
   common: { appLoaded, currentUser },
@@ -89,10 +89,9 @@ class Home extends Component {
         : null,
     }
     return (
-      <div className="container homePage">
-        <Col>TUTUTUT</Col>
-        <div className="row">
-          <div className="col-md-3 left-content-site hidden-xs hidden-sm">
+      <Container className="homePage">
+        <Row>
+          <Col md={3} xsHidden smHidden className="left-content-site">
             <div id="profile-card">
               <UserBadge currentUser={currentUser} id="profil_picture_main" />
               <div className="profile_name">
@@ -104,50 +103,9 @@ class Home extends Component {
                 </p>
               </div>
             </div>
-            <div className="myNav">
-              <ul>
-                <li className="bottom-separator">
-                  <i className="icon ion-ios-search" />
-                  <div>
-                    <a href="">Rechercher</a>
-                  </div>
-                </li>
-                <li className="bottom-separator news">
-                  <i className="icon ion-email" />
-                  <div>
-                    <a href="">
-                      Mes messages <span className="badge">4</span>
-                    </a>
-                  </div>
-                </li>
-                <li className="bottom-separator">
-                  <i className="icon ion-eye" />
-                  <div>
-                    <a href="">Visiteurs</a>
-                  </div>
-                </li>
-                <li className="bottom-separator">
-                  <i className="icon ion-ios-heart" />
-                  <div>
-                    <a href="">Coup de coeurs</a>
-                  </div>
-                </li>
-                <li className="bottom-separator">
-                  <i className="icon ion-star" />
-                  <div>
-                    <a href="">Mes favoris</a>
-                  </div>
-                </li>
-                <li className="bottom-separator">
-                  <i className="icon ion-ios-locked" />
-                  <div>
-                    <a href="">Mes accès privés</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="col-md-7 content-site">
+            <LeftMenu />
+          </Col>
+          <Col md={7} className="content-site">
             <div className="lineContents bottom-separator">
               <h4>
                 <i className="icon ion-navigate" />
@@ -159,30 +117,11 @@ class Home extends Component {
                     backgroundImage: `url(${salle.img})`,
                   }
                   return (
-                    <div className="col-xs-4" key={`gym(${salle.id})`}>
-                      <div className="bigBall">
-                        <div className="imgBlock">
-                          <div
-                            className="imgBlockContent circle"
-                            style={backgroundImgSalle}
-                          >
-                            <div className="circle bigBallInfo">
-                              <div className="circle greyBorder under">
-                                <div>
-                                  <div className="member">members</div>
-                                  <div className="beBold">{salle.members}</div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <h5 className="ballText">{salle.name}</h5>
-                      <p className="ballText">{salle.city}</p>
-                      <p className="text-muted ballText">
-                        {salle.members} membres
-                      </p>
-                    </div>
+                    <SalleContent
+                      salle={salle}
+                      bgImg={backgroundImgSalle}
+                      key={`gym(${salle.id})`}
+                    />
                   )
                 })}
               </div>
@@ -192,7 +131,7 @@ class Home extends Component {
                 <i className="icon ion-ribbon-b" />
                 TOP users
               </h4>
-              <div className="row rowContent">
+              <Row className="rowContent">
                 {userList &&
                   userList.map((user, i) => (
                     <User
@@ -201,16 +140,83 @@ class Home extends Component {
                       className="col-xs-3 usersLine"
                     />
                   ))}
-              </div>
+              </Row>
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     )
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
+
+const SalleContent = ({ salle: { id, members, name, city }, bgImg }) => (
+  <Col xs={4}>
+    <div className="bigBall">
+      <div className="imgBlock">
+        <div className="imgBlockContent circle" style={bgImg}>
+          <div className="circle bigBallInfo">
+            <div className="circle greyBorder under">
+              <div>
+                <div className="member">members</div>
+                <div className="beBold">{members}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h5 className="ballText">{name}</h5>
+      <p className="ballText">{city}</p>
+      <p className="text-muted ballText">{members} membres</p>
+    </div>
+  </Col>
+)
+
+const LeftMenu = props => (
+  <div className="myNav">
+    <ul>
+      <li className="bottom-separator">
+        <i className="icon ion-ios-search" />
+        <div>
+          <a href="">Rechercher</a>
+        </div>
+      </li>
+      <li className="bottom-separator news">
+        <i className="icon ion-email" />
+        <div>
+          <a href="">
+            Mes messages <span className="badge">4</span>
+          </a>
+        </div>
+      </li>
+      <li className="bottom-separator">
+        <i className="icon ion-eye" />
+        <div>
+          <a href="">Visiteurs</a>
+        </div>
+      </li>
+      <li className="bottom-separator">
+        <i className="icon ion-ios-heart" />
+        <div>
+          <a href="">Coup de coeurs</a>
+        </div>
+      </li>
+      <li className="bottom-separator">
+        <i className="icon ion-star" />
+        <div>
+          <a href="">Mes favoris</a>
+        </div>
+      </li>
+      <li className="bottom-separator">
+        <i className="icon ion-ios-locked" />
+        <div>
+          <a href="">Mes accès privés</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+)
 
 const userList = [
   {

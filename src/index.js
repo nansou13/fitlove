@@ -8,6 +8,7 @@ import { Route, Switch } from 'react-router-dom'
 import { ConnectedRouter } from 'react-router-redux'
 
 import App from './containers/App'
+import '@nans13/react-bs-grid/src/app.css'
 
 import registerServiceWorker from './registerServiceWorker'
 
