@@ -7,13 +7,13 @@ import agent from '../agent'
 
 import { Col, Container, Row } from '@nans13/react-bs-grid'
 
-import { LOGIN } from '../constants/actionTypes'
+import { REGISTER } from '../constants/actionTypes'
 
 const mapStateToProps = state => ({ ...state.auth })
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit: (pseudo, password) =>
-    dispatch({ type: LOGIN, payload: agent.Auth.login(pseudo, password) }),
+  onSubmit: user =>
+    dispatch({ type: REGISTER, payload: agent.Auth.register(user) }),
 })
 
 class Register extends React.Component {
@@ -26,22 +26,22 @@ class Register extends React.Component {
 
     this.submitForm = state => ev => {
       ev.preventDefault()
-      console.log(state)
-      // this.props.onSubmit(pseudo, password)
+      // console.log(state)
+      this.props.onSubmit(state)
     }
 
     this.state = {
       pseudo: '',
       sexe: '1',
       orientation: '1',
-      city: '',
+      ville: '',
       birthdate: '',
       password: '',
     }
   }
 
   render() {
-    const { pseudo, sexe, orientation, city, birthdate, password } = this.state
+    const { pseudo, sexe, orientation, ville, birthdate, password } = this.state
     return (
       <Container className="register-page">
         <Row>
@@ -91,8 +91,8 @@ class Register extends React.Component {
               <input
                 type="text"
                 placeholder="Ville"
-                value={city}
-                onChange={this.handleChange('city')}
+                value={ville}
+                onChange={this.handleChange('ville')}
               />
               <br />
               <input

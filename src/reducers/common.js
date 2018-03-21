@@ -4,6 +4,7 @@ import {
   LOGIN,
   LOGOUT,
   FORM_VALIDATE,
+  REGISTER,
 } from '../constants/actionTypes'
 
 const defaultState = {
@@ -25,6 +26,12 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         currentUser: { ...state.currentUser, ...action.payload.user },
+      }
+    case REGISTER:
+      return {
+        ...state,
+        redirectTo: action.payload ? '/' : null,
+        currentUser: action.payload ? action.payload.user : null,
       }
     case LOGIN:
       return {

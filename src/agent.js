@@ -66,7 +66,7 @@ const Auth = {
   login: (pseudo, password) =>
     requests.post(`/user/${VERSION}/login`, { user: { pseudo, password } }),
   update: user => requests.put(`/user/${VERSION}/`, { user }),
-  register: user => requests.post('/users', { user }),
+  register: user => requests.post(`/user/${VERSION}/new`, { user }),
   save: user => requests.put('/user', { user }),
 }
 
