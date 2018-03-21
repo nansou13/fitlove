@@ -15,6 +15,7 @@ import Visitor from './Visitor'
 import Home from './Home'
 import UserProfil from './UserProfil'
 import EditProfile from './EditProfile'
+import MessagesList from './MessagesList'
 
 import { store } from '../store'
 import { push } from 'react-router-redux'
@@ -79,6 +80,7 @@ class App extends Component {
             <Route exact path="/user/:id" component={UserProfil} />
             <Route exact path="/account" component={EditProfile} />
             <Route path="/training" component={CreateProgram} />
+            <Route path="/messages" component={MessagesList} />
             <Route path="/old" component={Brouillon} />
           </Switch>
         </Template>

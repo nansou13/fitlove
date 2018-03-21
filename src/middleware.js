@@ -59,10 +59,6 @@ const localStorageMiddleware = store => next => action => {
   next(action)
 }
 
-const socketIoMiddleware = store => next => action => {
-  next(action)
-}
-
 function isPromise(v, q) {
   return v && typeof v.then === 'function'
 }

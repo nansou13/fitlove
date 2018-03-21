@@ -164,6 +164,13 @@ a, a:visited, a:hover, a:focus, a:active {
   text-overflow: ellipsis;
   font-size: 13px; }
 
+.cutText {
+  margin-top: 0px;
+  margin: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 #footer {
   background: #fff;
   position: relative; }
