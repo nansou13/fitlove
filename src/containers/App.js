@@ -4,7 +4,7 @@ import agent from '../agent'
 
 import { connect } from 'react-redux'
 import { APP_LOAD, REDIRECT, LOGOUT } from '../constants/actionTypes'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 import '../App.css'
 import Template from './templates'
@@ -16,6 +16,7 @@ import Home from './Home'
 import UserProfil from './UserProfil'
 import EditProfile from './EditProfile'
 import MessagesList from './MessagesList'
+import Test from './Test'
 
 import { store } from '../store'
 import { push } from 'react-router-redux'
@@ -79,8 +80,9 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/user/:id" component={UserProfil} />
             <Route exact path="/account" component={EditProfile} />
+            <Route exact path="/test" component={Test} />
             <Route path="/training" component={CreateProgram} />
-            <Route path="/messages" component={MessagesList} />
+            <PrivateRoute path="/messages" component={MessagesList} />
             <Route path="/old" component={Brouillon} />
           </Switch>
         </Template>
@@ -97,5 +99,28 @@ class App extends Component {
     // );
   }
 }
+
+const mapStateToPropsPrivate = ({ common }) => ({
+  currentUser: common.currentUser,
+})
+const PrivateRoute = connect(mapStateToPropsPrivate)(
+  ({ component: Component, currentUser, ...rest }) => (
+    <Route
+      {...rest}
+      render={props =>
+        currentUser ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: { from: props.location },
+            }}
+          />
+        )
+      }
+    />
+  )
+)
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -6,6 +6,8 @@ import agent from '../agent'
 
 import { MESSAGES } from '../fake'
 
+import UserBadge from '../components/userBadge'
+
 const mapStateToProps = ({ common: { currentUser } }) => ({
   currentUser,
 })
@@ -15,7 +17,6 @@ const mapDispatchToProps = dispatch => ({})
 class MessagesList extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
       messages: MESSAGES,
     }
@@ -45,14 +46,19 @@ class MessagesList extends Component {
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessagesList)
 
-const MessageDisplay = ({ content: { id, text, sender }, removeMessage }) => (
+const MessageDisplay = ({
+  content: { id, text, sender, date },
+  removeMessage,
+}) => (
   <Row className="message">
-    <Col sm={4} className="userPins" />
-    <Col sm={6} className="messageContent">
+    <Col sm={1} className="col_user_badge">
+      <UserBadge currentUser={sender} />
+    </Col>
+    <Col sm={9} className="messageContent">
       <div className="userName">{sender ? sender.name : 'john doe'}</div>
       <div className="content cutText">{text}</div>
       <div style={{ marginBottom: 10 }} className="messageDate">
-        11-11-11111
+        {date}
       </div>
     </Col>
     <Col sm={2} className="messageAction">

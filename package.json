@@ -31,6 +31,7 @@
   "dependencies": {
     "@nans13/react-bs-grid": "^1.0.1",
     "axios": "^0.17.1",
+    "classnames": "^2.2.5",
     "history": "^4.6.3",
     "marked": "^0.3.6",
     "material-ui": "^0.20.0",

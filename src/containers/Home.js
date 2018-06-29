@@ -7,7 +7,7 @@ import { LOGOUT, GET_USERS_LIST } from '../constants/actionTypes'
 
 import { STATIC_URL } from '../constants/globals'
 
-import { UserBadge } from '../components/userBadge'
+import UserBadge from '../components/userBadge'
 import { User } from '../components/userList'
 
 import { Col, Container, Row } from '@nans13/react-bs-grid'
@@ -93,7 +93,9 @@ class Home extends Component {
         <Row>
           <Col md={3} xsHidden smHidden className="left-content-site">
             <div id="profile-card">
-              <UserBadge currentUser={currentUser} id="profil_picture_main" />
+              <div id="profil_picture_main">
+                <UserBadge currentUser={currentUser} />
+              </div>
               <div className="profile_name">
                 <h5>{currentUser.pseudo}</h5>
                 <p>
@@ -166,10 +168,10 @@ const SalleContent = ({ salle: { id, members, name, city }, bgImg }) => (
           </div>
         </div>
       </div>
-      <h5 className="ballText">{name}</h5>
-      <p className="ballText">{city}</p>
-      <p className="text-muted ballText">{members} membres</p>
     </div>
+    <h5 className="ballText">{name}</h5>
+    <p className="ballText">{city}</p>
+    <p className="text-muted ballText">{members} membres</p>
   </Col>
 )
 
